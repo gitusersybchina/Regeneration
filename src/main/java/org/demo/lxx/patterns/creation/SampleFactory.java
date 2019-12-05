@@ -21,32 +21,34 @@ public class SampleFactory {
         }
     };
 
-    public Product createProduct(Class type) {
+    public Product createProduct(Product product) {
 
-        if (CarProduct.class.getSimpleName().equals(type.getSimpleName())) {
+        if(product instanceof CarProduct){
             return CarProduct.of("宝马");
         }
-        if (AirplaneProduct.class.getSimpleName().equals(type.getSimpleName())) {
+
+        if(product instanceof AirplaneProduct){
             return AirplaneProduct.of("波音747");
         }
-        if (TrainProduct.class.getSimpleName().equals(type.getSimpleName())) {
+
+        if(product instanceof TrainProduct){
             return TrainProduct.of("和谐号");
         }
         return Product;
     }
 
 
-    public static void main(String... args) {
+    public static void main(String[] args) {
 
-        Product product1 = new SampleFactory().createProduct(AirplaneProduct.class);
-        Product product2 = new SampleFactory().createProduct(CarProduct.class);
-        Product product3 = new SampleFactory().createProduct(TrainProduct.class);
+        Product product1 = new SampleFactory().createProduct(new CarProduct());
+        Product product2 = new SampleFactory().createProduct(new TrainProduct());
+        Product product3 = new SampleFactory().createProduct(new AirplaneProduct());
 
         product1.productInformation();
         product2.productInformation();
         product3.productInformation();
 
-        Product product4 = new SampleFactory().createProduct(Object.class);
+        Product product4 = new SampleFactory().createProduct(new Product());
         product4.productInformation();
     }
 
