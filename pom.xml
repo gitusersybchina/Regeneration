@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.demo</groupId>
-    <artifactId>lxx</artifactId>
+    <artifactId>regeneration</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Regeneration</name>
     <description>Regeneration coding</description>
