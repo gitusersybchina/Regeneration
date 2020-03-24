@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Description for this class
@@ -18,6 +19,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Slf4j
 public class CarProduct extends Product {
 
     private String name;
@@ -29,14 +31,14 @@ public class CarProduct extends Product {
     @Override
     public void productInformation() {
 
-        System.out.println("滴滴滴滴滴滴滴");
-        System.out.println("我是汽车产品,信息:" + this.toString());
+        log.info("滴滴滴滴滴滴滴");
+        log.info("我是汽车产品,信息:" + this.toString());
     }
 
 
     public static CarProduct of(String name) {
 
-        System.out.println("正在生产汽车........");
+        log.info("正在生产汽车........");
         return new CarProduct(name, UUID.randomUUID().toString(), 100);
     }
 }

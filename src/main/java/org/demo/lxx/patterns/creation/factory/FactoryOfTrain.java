@@ -1,4 +1,4 @@
-package org.demo.lxx.patterns.creation;
+package org.demo.lxx.patterns.creation.factory;
 
 import org.demo.lxx.patterns.creation.entity.Product;
 import org.demo.lxx.patterns.creation.entity.TrainProduct;

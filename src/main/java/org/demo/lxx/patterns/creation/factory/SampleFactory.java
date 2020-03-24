@@ -1,5 +1,6 @@
-package org.demo.lxx.patterns.creation;
+package org.demo.lxx.patterns.creation.factory;
 
+import lombok.extern.slf4j.Slf4j;
 import org.demo.lxx.patterns.creation.entity.AirplaneProduct;
 import org.demo.lxx.patterns.creation.entity.CarProduct;
 import org.demo.lxx.patterns.creation.entity.Product;
@@ -12,12 +13,13 @@ import org.demo.lxx.patterns.creation.entity.TrainProduct;
  * @version : 1.0
  * @date : 2019/10/31 16:52
  */
+@Slf4j
 public class SampleFactory {
 
     private static Product Product = new Product() {
         @Override
         public void productInformation() {
-            System.out.println("我是基础产品,没有信息");
+            log.info("我是基础产品,没有信息");
         }
     };
 
@@ -35,21 +37,6 @@ public class SampleFactory {
             return TrainProduct.of("和谐号");
         }
         return Product;
-    }
-
-
-    public static void main(String[] args) {
-
-        Product product1 = new SampleFactory().createProduct(new CarProduct());
-        Product product2 = new SampleFactory().createProduct(new TrainProduct());
-        Product product3 = new SampleFactory().createProduct(new AirplaneProduct());
-
-        product1.productInformation();
-        product2.productInformation();
-        product3.productInformation();
-
-        Product product4 = new SampleFactory().createProduct(new Product());
-        product4.productInformation();
     }
 
 }

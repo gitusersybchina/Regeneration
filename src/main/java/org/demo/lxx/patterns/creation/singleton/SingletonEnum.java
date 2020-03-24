@@ -1,4 +1,6 @@
-package org.demo.lxx.patterns.creation;
+package org.demo.lxx.patterns.creation.singleton;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * 单例模式-枚举实现
@@ -7,6 +9,7 @@ package org.demo.lxx.patterns.creation;
  * @version : 1.0
  * @date : 2019/10/31 16:07
  */
+@Slf4j
 public enum SingletonEnum {
 
     /**
@@ -28,16 +31,16 @@ public enum SingletonEnum {
         // 单例测试
         SingletonEnum firstSingleton = SingletonEnum.INSTANCE;
         firstSingleton.setObjName("firstName");
-        System.out.println(firstSingleton.getObjName());
+        log.info(firstSingleton.getObjName());
         SingletonEnum secondSingleton = SingletonEnum.INSTANCE;
         secondSingleton.setObjName("secondName");
-        System.out.println(firstSingleton.getObjName());
-        System.out.println(secondSingleton.getObjName());
+        log.info(firstSingleton.getObjName());
+        log.info(secondSingleton.getObjName());
         // 反射获取实例测试
         try {
             SingletonEnum[] enumConstants = SingletonEnum.class.getEnumConstants();
             for (SingletonEnum enumConstant : enumConstants) {
-                System.out.println(enumConstant.getObjName());
+                log.info(enumConstant.getObjName());
             }
         } catch (Exception e) {
             e.printStackTrace();

@@ -1,6 +1,5 @@
 package org.demo.lxx.patterns.creation.entity;
 
-
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -8,18 +7,13 @@ import lombok.extern.slf4j.Slf4j;
  *
  * @author : yinbo.shi@hand-china.com
  * @version : 1.0
- * @date : 2019/10/31 16:54
+ * @date : 2020/1/1 16:08
  */
 @Slf4j
-public class Product {
+public class Red implements Color {
 
-
-
-    /**
-     * 返回产品信息
-     */
-    public void productInformation() {
-       log.info("我是基础产品,没有信息");
+    @Override
+    public void fill() {
+        log.info("我会把你变成红色的.");
     }
-
 }

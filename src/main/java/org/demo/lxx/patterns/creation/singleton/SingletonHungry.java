@@ -1,4 +1,4 @@
-package org.demo.lxx.patterns.creation;
+package org.demo.lxx.patterns.creation.singleton;
 
 /**
  * 单例模式-饿汉式
