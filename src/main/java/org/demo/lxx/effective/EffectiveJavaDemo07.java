@@ -34,7 +34,7 @@ public class EffectiveJavaDemo07 {
             if (size == 0) {
                 throw new EmptyStackException();
             }
-            // 此时直接出栈后，数组中仍然存在这个对象引用导致
+            // 此时直接出栈后，数组中仍然存在这个对象引用导致内存泄漏
             // return elements[--size];
 
             // 需要手动解除引用
