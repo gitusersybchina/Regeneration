@@ -1,8 +1,5 @@
-package org.demo.lxx.algorithm;
+package org.demo.lxx.algorithm.sort;
 
-import java.util.Arrays;
-import java.util.Random;
-import java.util.Scanner;
 import java.util.Stack;
 
 /**
@@ -17,7 +14,7 @@ import java.util.Stack;
  * @version : 1.0
  * @date : 2020/3/25 15:05
  */
-public class QuickSortDemo {
+public class QuicklySortDemo {
 
 
     /**
@@ -274,39 +271,6 @@ public class QuickSortDemo {
             } else {
                 return midIndex;
             }
-        }
-    }
-
-    public static void main(String[] args) {
-
-        Scanner scanner = new Scanner(System.in);
-        Random random = new Random(2);
-        while (scanner.hasNextLine()) {
-            final int size = scanner.hasNext() ? Integer.parseInt(scanner.next()) : 0;
-            final int[] array1 = new int[size];
-            for (int i = 0; i < size; i++) {
-                array1[i] = random.nextInt(size * 10);
-            }
-            final int[] array2 = Arrays.copyOf(array1, array1.length);
-            final int[] array3 = Arrays.copyOf(array1, array1.length);
-            final int[] array4 = Arrays.copyOf(array1, array1.length);
-            System.out.println("快速排序前输入参数为:" + Arrays.toString(array1));
-            long beginTime = System.currentTimeMillis();
-            quickSortByPit(array1, 0, size - 1);
-//            System.out.println("挖坑填数法快速排序输出结果为:" + Arrays.toString(array1));
-            System.out.println("挖坑填数法快速排序耗时为:" + (System.currentTimeMillis() - beginTime) + "毫秒");
-            beginTime = System.currentTimeMillis();
-            quickSortByPointSwap(array2, 0, size - 1);
-//            System.out.println("左右指针交换法快速排序输出结果为:" + Arrays.toString(array2));
-            System.out.println("左右指针交换法快速排序耗时为:" + (System.currentTimeMillis() - beginTime) + "毫秒");
-            beginTime = System.currentTimeMillis();
-            quickSortByPrePointSwap(array3, 0, size - 1);
-//            System.out.println("前后指针交换法快速排序输出结果为:" + Arrays.toString(array3));
-            System.out.println("前后指针交换法快速排序耗时为:" + (System.currentTimeMillis() - beginTime) + "毫秒");
-            beginTime = System.currentTimeMillis();
-            quickSortNotRecursive(array4, 0, size - 1);
-            System.out.println("前后指针交换法快速排序输出结果为:" + Arrays.toString(array4));
-            System.out.println("非递归栈快速排序耗时为:" + (System.currentTimeMillis() - beginTime) + "毫秒");
         }
     }
 
