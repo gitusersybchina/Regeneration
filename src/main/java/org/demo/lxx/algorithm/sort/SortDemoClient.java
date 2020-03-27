@@ -16,6 +16,19 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class SortDemoClient {
 
+
+    public static void testShellSort(int[] originalArray) {
+
+        log.debug("希尔排序前输入参数为:" + Arrays.toString(originalArray));
+
+        final int[] array1 = Arrays.copyOf(originalArray, originalArray.length);
+        long beginTime = System.currentTimeMillis();
+        ShellSortDemo.shellSort(array1);
+        log.info("希尔排序排序耗时为:" + (System.currentTimeMillis() - beginTime) + "毫秒");
+        log.debug("希尔排序后输出结果为:" + Arrays.toString(array1));
+    }
+
+
     public static void testSampleSelectSort(int[] originalArray) {
 
         log.debug("简单选择排序前输入参数为:" + Arrays.toString(originalArray));
@@ -104,7 +117,9 @@ public class SortDemoClient {
             // log.warn("-------------分隔符---------------");
             // testBubbleSort(originalArray);
             // log.warn("-------------分隔符---------------");
-            testSampleSelectSort(originalArray);
+            // testSampleSelectSort(originalArray);
+            log.warn("-------------分隔符---------------");
+            testShellSort(originalArray);
         }
     }
 }
