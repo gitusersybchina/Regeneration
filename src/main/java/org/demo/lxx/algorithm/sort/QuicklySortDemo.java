@@ -130,9 +130,9 @@ public class QuicklySortDemo {
     private static int partQuickSortByPit(int[] array, int leftIndex, int rightIndex) {
         // ------------------ 挖坑取数部分 -------------------------
         // 首次基准数字取了第一个元素
-//        int baseNumber = array[leftIndex];
+        int baseNumber = array[leftIndex];
         // 优化后基准数字取数组首中尾三数的中间数字
-        int baseNumber = array[getBasIndexByMid(array, leftIndex, rightIndex)];
+        // int baseNumber = array[getBasIndexByMid(array, leftIndex, rightIndex)];
         while (leftIndex < rightIndex) {
             // 从右向左找第一个小于基准数的元素
             while (leftIndex < rightIndex && array[rightIndex] >= baseNumber) {
@@ -174,9 +174,9 @@ public class QuicklySortDemo {
      */
     private static int partQuickSortByPointSwap(int[] array, int leftIndex, int rightIndex) {
         // 首次基准数字取了最后一个元素
-//        int baseNumber = array[rightIndex];
+        int baseNumber = array[rightIndex];
         // 优化后基准数字取数组首中尾三数的中间数字
-        int baseNumber = array[getBasIndexByMid(array, leftIndex, rightIndex)];
+        // int baseNumber = array[getBasIndexByMid(array, leftIndex, rightIndex)];
         final int baseIndex = rightIndex;
         while (leftIndex < rightIndex) {
             // 从左向右找第一个小于等于基准数的元素
@@ -217,9 +217,9 @@ public class QuicklySortDemo {
 
         if (leftIndex < rightIndex) {
             // 首次基准数字取了最后一个元素
-//            int baseNumber = array[rightIndex];
+            int baseNumber = array[rightIndex];
             // 优化后基准数字取数组首中尾三数的中间数字
-            int baseNumber = array[getBasIndexByMid(array, leftIndex, rightIndex)];
+            // int baseNumber = array[getBasIndexByMid(array, leftIndex, rightIndex)];
             int currentIndex = leftIndex;
             int preIndex = currentIndex - 1;
             while (currentIndex < rightIndex) {
