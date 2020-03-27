@@ -16,6 +16,17 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class SortDemoClient {
 
+    public static void testSampleSelectSort(int[] originalArray) {
+
+        log.debug("简单选择排序前输入参数为:" + Arrays.toString(originalArray));
+
+        final int[] array1 = Arrays.copyOf(originalArray, originalArray.length);
+        long beginTime = System.currentTimeMillis();
+        SelectionSortDemo.sampleSelectSort(array1);
+        log.info("简单选择排序耗时为:" + (System.currentTimeMillis() - beginTime) + "毫秒");
+        log.debug("简单选择排序后输出结果为:" + Arrays.toString(array1));
+    }
+
 
     public static void testBubbleSort(int[] originalArray) {
 
@@ -88,11 +99,12 @@ public class SortDemoClient {
                 originalArray[i] = random.nextInt(size * 10);
             }
             // testQuicklySort(originalArray);
-            log.warn("-------------分隔符---------------");
-            testStraightlyInsertSort(originalArray);
-            log.warn("-------------分隔符---------------");
-            testBubbleSort(originalArray);
-            log.warn("-------------分隔符---------------");
+            // log.warn("-------------分隔符---------------");
+            // testStraightlyInsertSort(originalArray);
+            // log.warn("-------------分隔符---------------");
+            // testBubbleSort(originalArray);
+            // log.warn("-------------分隔符---------------");
+            testSampleSelectSort(originalArray);
         }
     }
 }
