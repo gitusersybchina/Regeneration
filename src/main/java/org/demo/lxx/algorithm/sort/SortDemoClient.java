@@ -50,17 +50,24 @@ public class SortDemoClient {
     public static void testStraightlyInsertSort(int[] originalArray) {
 
         log.debug("直接插入排序前输入参数为:" + Arrays.toString(originalArray));
-        final int[] array = Arrays.copyOf(originalArray, originalArray.length);
-        final long beginTime = System.currentTimeMillis();
-        StraightlyInsertSortDemo.straightlyInsertSort(array);
+        final int[] array1 = Arrays.copyOf(originalArray, originalArray.length);
+        final int[] array2 = Arrays.copyOf(originalArray, originalArray.length);
+
+        long beginTime = System.currentTimeMillis();
+        InsertionSortDemo.straightlyInsertSort(array1);
         log.info("直接插入排序的耗时:" + (System.currentTimeMillis() - beginTime) + "毫秒");
-        log.debug("直接插入排序后的结果为:" + Arrays.toString(array));
+        log.debug("直接插入排序后的结果为:" + Arrays.toString(array1));
+
+        beginTime = System.currentTimeMillis();
+        InsertionSortDemo.preIndexInsertSort(array2);
+        log.info("前后指针插入排序的耗时:" + (System.currentTimeMillis() - beginTime) + "毫秒");
+        log.debug("前后指针插入排序后的结果为:" + Arrays.toString(array2));
     }
 
     public static void main(String[] args) {
 
         final Scanner scanner = new Scanner(System.in);
-        final Random random = new Random(2);
+        final Random random = new Random();
         while (scanner.hasNextLine()) {
             final int size = scanner.hasNext() ? Integer.parseInt(scanner.next()) : 0;
             final int[] originalArray = new int[size];
