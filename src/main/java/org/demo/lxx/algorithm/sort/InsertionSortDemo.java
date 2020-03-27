@@ -2,11 +2,13 @@ package org.demo.lxx.algorithm.sort;
 
 
 /**
- * 直接插入排序
+ * 插入排序
  * <p>
  * 核心思想：
  * 插入排序（Insertion-Sort）的算法描述是一种简单直观的排序算法。
  * 它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。
+ * <p>
+ * 平均时间复杂度为O(n2)  空间复杂度O(1) 具有稳定性
  *
  * @author : yinbo.shi@hand-china.com
  * @version : 1.0
@@ -15,7 +17,7 @@ package org.demo.lxx.algorithm.sort;
 public class InsertionSortDemo {
 
     /**
-     * 交换式插入排序
+     * 直接插入排序
      * <p>
      * 将数组中的所有元素依次跟前面已经排好的元素相比较，如果选择的元素比已排序的元素小，则交换，直到全部元素都比较过。
      * 因此，从上面的描述中我们可以发现，直接插入排序可以用两个循环完成：

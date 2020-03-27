@@ -17,9 +17,22 @@ import lombok.extern.slf4j.Slf4j;
 public class SortDemoClient {
 
 
+    public static void testBubbleSort(int[] originalArray) {
+
+        // log.debug("冒泡排序前输入参数为:" + Arrays.toString(originalArray));
+
+        final int[] array1 = Arrays.copyOf(originalArray, originalArray.length);
+        long beginTime = System.currentTimeMillis();
+        BubbleSortDemo.bubbleSort(array1);
+        log.info("冒泡排序耗时为:" + (System.currentTimeMillis() - beginTime) + "毫秒");
+        // log.debug("冒泡排序后输出结果为:" + Arrays.toString(array1));
+    }
+
+
     public static void testQuicklySort(int[] originalArray) {
 
         log.debug("快速排序前输入参数为:" + Arrays.toString(originalArray));
+
         final int size = originalArray.length;
         final int[] array1 = Arrays.copyOf(originalArray, originalArray.length);
         final int[] array2 = Arrays.copyOf(originalArray, originalArray.length);
@@ -49,19 +62,19 @@ public class SortDemoClient {
 
     public static void testStraightlyInsertSort(int[] originalArray) {
 
-        log.debug("直接插入排序前输入参数为:" + Arrays.toString(originalArray));
+        // log.debug("直接插入排序前输入参数为:" + Arrays.toString(originalArray));
         final int[] array1 = Arrays.copyOf(originalArray, originalArray.length);
         final int[] array2 = Arrays.copyOf(originalArray, originalArray.length);
 
         long beginTime = System.currentTimeMillis();
         InsertionSortDemo.straightlyInsertSort(array1);
         log.info("直接插入排序的耗时:" + (System.currentTimeMillis() - beginTime) + "毫秒");
-        log.debug("直接插入排序后的结果为:" + Arrays.toString(array1));
+        // log.debug("直接插入排序后的结果为:" + Arrays.toString(array1));
 
         beginTime = System.currentTimeMillis();
         InsertionSortDemo.preIndexInsertSort(array2);
         log.info("前后指针插入排序的耗时:" + (System.currentTimeMillis() - beginTime) + "毫秒");
-        log.debug("前后指针插入排序后的结果为:" + Arrays.toString(array2));
+        // log.debug("前后指针插入排序后的结果为:" + Arrays.toString(array2));
     }
 
     public static void main(String[] args) {
@@ -74,9 +87,12 @@ public class SortDemoClient {
             for (int i = 0; i < size; i++) {
                 originalArray[i] = random.nextInt(size * 10);
             }
-            testQuicklySort(originalArray);
+            // testQuicklySort(originalArray);
             log.warn("-------------分隔符---------------");
             testStraightlyInsertSort(originalArray);
+            log.warn("-------------分隔符---------------");
+            testBubbleSort(originalArray);
+            log.warn("-------------分隔符---------------");
         }
     }
 }
