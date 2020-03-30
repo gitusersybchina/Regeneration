@@ -50,26 +50,26 @@ public class MergeSortDemo {
      */
     private static void partyMergeSort(int[] array, int[] left, int[] right) {
 
-        int leftLength = left.length;
-        int rightLength = right.length;
-        // 额外的临时空间存放排序好的数据
-        int[] temp = new int[leftLength + rightLength];
-        int tempIndex = 0, leftIndex = 0, rightIndex = 0;
+        final int leftLength = left.length;
+        final int rightLength = right.length;
+        // 三根指针分别操作三个空间
+        int originIndex = 0, leftIndex = 0, rightIndex = 0;
+        // 从两个序列中选出最小值依次插入原空间
         while (leftIndex < leftLength && rightIndex < rightLength) {
             if (left[leftIndex] >= right[rightIndex]) {
-                temp[tempIndex++] = right[rightIndex++];
+                array[originIndex++] = right[rightIndex++];
             } else {
-                temp[tempIndex++] = left[leftIndex++];
+                array[originIndex++] = left[leftIndex++];
             }
         }
+        // 合并左子序列到原序列
         while (leftIndex < leftLength) {
-            temp[tempIndex++] = left[leftIndex++];
+            array[originIndex++] = left[leftIndex++];
         }
+        // 合并右子序列到原序列
         while (rightIndex < rightLength) {
-            temp[tempIndex++] = right[rightIndex++];
+            array[originIndex++] = right[rightIndex++];
         }
-        // 将临时数据依序放在原数组中
-        System.arraycopy(temp, 0, array, 0, array.length);
     }
 
 }
