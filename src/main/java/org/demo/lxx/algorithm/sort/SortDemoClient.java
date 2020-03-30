@@ -17,6 +17,18 @@ import lombok.extern.slf4j.Slf4j;
 public class SortDemoClient {
 
 
+    public static void testMergeSort(int[] originalArray) {
+
+        log.debug("归并排序前输入参数为:" + Arrays.toString(originalArray));
+
+        final int[] array1 = Arrays.copyOf(originalArray, originalArray.length);
+        long beginTime = System.currentTimeMillis();
+        MergeSortDemo.mergeSort(array1);
+        log.info("归并排序排序耗时为:" + (System.currentTimeMillis() - beginTime) + "毫秒");
+        log.debug("归并排序后输出结果为:" + Arrays.toString(array1));
+    }
+
+
     public static void testShellSort(int[] originalArray) {
 
         log.debug("希尔排序前输入参数为:" + Arrays.toString(originalArray));
@@ -50,6 +62,12 @@ public class SortDemoClient {
         BubbleSortDemo.bubbleSort(array1);
         log.info("冒泡排序耗时为:" + (System.currentTimeMillis() - beginTime) + "毫秒");
         // log.debug("冒泡排序后输出结果为:" + Arrays.toString(array1));
+
+        final int[] array2 = Arrays.copyOf(originalArray, originalArray.length);
+        beginTime = System.currentTimeMillis();
+        BubbleSortDemo.bubbleSortOptimization(array2);
+        log.info("优化后的冒泡排序耗时为:" + (System.currentTimeMillis() - beginTime) + "毫秒");
+        // log.debug("优化后的冒泡排序后输出结果为:" + Arrays.toString(array2));
     }
 
 
@@ -120,6 +138,8 @@ public class SortDemoClient {
             // testSampleSelectSort(originalArray);
             log.warn("-------------分隔符---------------");
             testShellSort(originalArray);
+            log.warn("-------------分隔符---------------");
+            testMergeSort(originalArray);
         }
     }
 }
