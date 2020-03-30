@@ -33,12 +33,14 @@ public class MergeSortDemo {
         final int length = array.length;
         final int midIndex = length / 2;
 
-        final int[] left = Arrays.copyOfRange(array, 0, midIndex);
-        final int[] right = Arrays.copyOfRange(array, midIndex, length);
-
         if (midIndex > 0) {
+
+            final int[] left = Arrays.copyOfRange(array, 0, midIndex);
+            final int[] right = Arrays.copyOfRange(array, midIndex, length);
+
             mergeSort(left);
             mergeSort(right);
+
             partyMergeSort(array, left, right);
         }
     }

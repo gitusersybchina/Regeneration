@@ -17,6 +17,18 @@ import lombok.extern.slf4j.Slf4j;
 public class SortDemoClient {
 
 
+    public static void testHeapSort(int[] originalArray) {
+
+        log.debug("堆排序前输入参数为:" + Arrays.toString(originalArray));
+
+        final int[] array1 = Arrays.copyOf(originalArray, originalArray.length);
+        long beginTime = System.currentTimeMillis();
+        HeapSortDemo.heapSort(array1);
+        log.info("堆排序排序耗时为:" + (System.currentTimeMillis() - beginTime) + "毫秒");
+        log.debug("堆排序后输出结果为:" + Arrays.toString(array1));
+    }
+
+
     public static void testMergeSort(int[] originalArray) {
 
         log.debug("归并排序前输入参数为:" + Arrays.toString(originalArray));
@@ -136,10 +148,12 @@ public class SortDemoClient {
             // testBubbleSort(originalArray);
             // log.warn("-------------分隔符---------------");
             // testSampleSelectSort(originalArray);
-            log.warn("-------------分隔符---------------");
-            testShellSort(originalArray);
+            // log.warn("-------------分隔符---------------");
+            // testShellSort(originalArray);
             log.warn("-------------分隔符---------------");
             testMergeSort(originalArray);
+            log.warn("-------------分隔符---------------");
+            testHeapSort(originalArray);
         }
     }
 }
