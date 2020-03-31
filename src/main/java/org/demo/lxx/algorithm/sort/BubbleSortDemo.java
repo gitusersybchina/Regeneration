@@ -31,9 +31,7 @@ public class BubbleSortDemo {
             for (int j = 0; j < length - 1; j++) {
                 // 比较相邻元素交换
                 if (array[j] > array[j + 1]) {
-                    int temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
+                    SortDemoUtils.swap(array, j, j + 1);
                 }
             }
         }
@@ -55,9 +53,7 @@ public class BubbleSortDemo {
             for (int j = 0; j < length - 1; j++) {
                 // 比较相邻元素交换
                 if (array[j] > array[j + 1]) {
-                    int temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
+                    SortDemoUtils.swap(array, j, j + 1);
                     flag = true;
                 }
             }

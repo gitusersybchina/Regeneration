@@ -190,14 +190,10 @@ public class QuicklySortDemo {
                 rightIndex--;
             }
             // 左右交换
-            int temp = array[leftIndex];
-            array[leftIndex] = array[rightIndex];
-            array[rightIndex] = temp;
+            SortDemoUtils.swap(array, leftIndex, rightIndex);
         }
         // 此时 left==right 基准元素与相遇点元素交换
-        int temp = array[leftIndex];
-        array[leftIndex] = baseNumber;
-        array[baseIndex] = temp;
+        SortDemoUtils.swap(array, leftIndex, baseIndex);
         return leftIndex;
     }
 
@@ -227,16 +223,12 @@ public class QuicklySortDemo {
             while (currentIndex < rightIndex) {
                 // 如果找到小于key的值，并且cur和pre之间有距离时则进行交换。注意两个条件的先后位置不能更换
                 while (array[currentIndex] < baseNumber && ++preIndex != currentIndex) {
-                    int temp = array[currentIndex];
-                    array[currentIndex] = array[preIndex];
-                    array[preIndex] = temp;
+                    SortDemoUtils.swap(array, currentIndex, preIndex);
                 }
                 ++currentIndex;
             }
             // 此时current>=right,交换基准数字即right和pre+1的位置
-            int temp = array[rightIndex];
-            array[rightIndex] = array[++preIndex];
-            array[preIndex] = temp;
+            SortDemoUtils.swap(array, rightIndex, ++preIndex);
             return preIndex;
         }
         return -1;

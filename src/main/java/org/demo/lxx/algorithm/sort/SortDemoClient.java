@@ -17,21 +17,33 @@ import lombok.extern.slf4j.Slf4j;
 public class SortDemoClient {
 
 
+    public static void testBucketSort(int[] originalArray) {
+
+        log.debug("桶排序+直接插入排序前输入参数为:" + Arrays.toString(originalArray));
+
+        final int[] array1 = Arrays.copyOf(originalArray, originalArray.length);
+        long beginTime = System.currentTimeMillis();
+        BucketSortDemo.bucketSort(array1, SortDemoUtils.DEFAULT_BUCKET_QUANTITY);
+        log.info("通过桶排序+直接插入排序排序耗时为:" + (System.currentTimeMillis() - beginTime) + "毫秒");
+        log.debug("通过桶排序+直接插入排序后输出结果为:" + Arrays.toString(array1));
+    }
+
+
     public static void testCountingSort(int[] originalArray) {
 
-        // log.debug("计数排序前输入参数为:" + Arrays.toString(originalArray));
+        log.debug("计数排序前输入参数为:" + Arrays.toString(originalArray));
 
         final int[] array1 = Arrays.copyOf(originalArray, originalArray.length);
         long beginTime = System.currentTimeMillis();
         CountingSortDemo.countingSortByRange(array1);
         log.info("通过范围计数排序排序耗时为:" + (System.currentTimeMillis() - beginTime) + "毫秒");
-        // log.debug("通过范围计数排序后输出结果为:" + Arrays.toString(array1));
+        log.debug("通过范围计数排序后输出结果为:" + Arrays.toString(array1));
 
         final int[] array2 = Arrays.copyOf(originalArray, originalArray.length);
         beginTime = System.currentTimeMillis();
         CountingSortDemo.countingSortByMaxValue(array2);
         log.info("通过最大值计数排序排序耗时为:" + (System.currentTimeMillis() - beginTime) + "毫秒");
-        // log.debug("通过最大值计数排序后输出结果为:" + Arrays.toString(array2));
+        log.debug("通过最大值计数排序后输出结果为:" + Arrays.toString(array2));
     }
 
 
@@ -85,19 +97,19 @@ public class SortDemoClient {
 
     public static void testBubbleSort(int[] originalArray) {
 
-        // log.debug("冒泡排序前输入参数为:" + Arrays.toString(originalArray));
+        log.debug("冒泡排序前输入参数为:" + Arrays.toString(originalArray));
 
         final int[] array1 = Arrays.copyOf(originalArray, originalArray.length);
         long beginTime = System.currentTimeMillis();
         BubbleSortDemo.bubbleSort(array1);
         log.info("冒泡排序耗时为:" + (System.currentTimeMillis() - beginTime) + "毫秒");
-        // log.debug("冒泡排序后输出结果为:" + Arrays.toString(array1));
+        log.debug("冒泡排序后输出结果为:" + Arrays.toString(array1));
 
         final int[] array2 = Arrays.copyOf(originalArray, originalArray.length);
         beginTime = System.currentTimeMillis();
         BubbleSortDemo.bubbleSortOptimization(array2);
         log.info("优化后的冒泡排序耗时为:" + (System.currentTimeMillis() - beginTime) + "毫秒");
-        // log.debug("优化后的冒泡排序后输出结果为:" + Arrays.toString(array2));
+        log.debug("优化后的冒泡排序后输出结果为:" + Arrays.toString(array2));
     }
 
 
@@ -134,19 +146,19 @@ public class SortDemoClient {
 
     public static void testStraightlyInsertSort(int[] originalArray) {
 
-        // log.debug("直接插入排序前输入参数为:" + Arrays.toString(originalArray));
+        log.debug("直接插入排序前输入参数为:" + Arrays.toString(originalArray));
         final int[] array1 = Arrays.copyOf(originalArray, originalArray.length);
         final int[] array2 = Arrays.copyOf(originalArray, originalArray.length);
 
         long beginTime = System.currentTimeMillis();
         InsertionSortDemo.straightlyInsertSort(array1);
         log.info("直接插入排序的耗时:" + (System.currentTimeMillis() - beginTime) + "毫秒");
-        // log.debug("直接插入排序后的结果为:" + Arrays.toString(array1));
+        log.debug("直接插入排序后的结果为:" + Arrays.toString(array1));
 
         beginTime = System.currentTimeMillis();
         InsertionSortDemo.preIndexInsertSort(array2);
         log.info("前后指针插入排序的耗时:" + (System.currentTimeMillis() - beginTime) + "毫秒");
-        // log.debug("前后指针插入排序后的结果为:" + Arrays.toString(array2));
+        log.debug("前后指针插入排序后的结果为:" + Arrays.toString(array2));
     }
 
     public static void main(String[] args) {
@@ -159,6 +171,7 @@ public class SortDemoClient {
             for (int i = 0; i < size; i++) {
                 originalArray[i] = random.nextInt(size * 10);
             }
+            // log.warn("-------------分隔符---------------");
             // testQuicklySort(originalArray);
             // log.warn("-------------分隔符---------------");
             // testStraightlyInsertSort(originalArray);
@@ -174,6 +187,8 @@ public class SortDemoClient {
             // testHeapSort(originalArray);
             // log.warn("-------------分隔符---------------");
             testCountingSort(originalArray);
+            log.warn("-------------分隔符---------------");
+            testBucketSort(originalArray);
         }
     }
 }

@@ -34,7 +34,7 @@ public class SelectionSortDemo {
     public static void sampleSelectSort(int[] array) {
 
         final int length = array.length;
-        int minIndex, temp;
+        int minIndex;
         // 遍历无序数组
         for (int i = 0; i < length - 1; i++) {
             minIndex = i;
@@ -45,9 +45,7 @@ public class SelectionSortDemo {
                 }
             }
             // 交换当前无序数组中的当前元素与最小元素
-            temp = array[i];
-            array[i] = array[minIndex];
-            array[minIndex] = temp;
+            SortDemoUtils.swap(array, i, minIndex);
         }
 
     }

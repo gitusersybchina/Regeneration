@@ -39,9 +39,7 @@ public class HeapSortDemo {
         // 通过调整堆完成排序
         for (int i = lastIndex; i > 0; i--) {
             // 将堆顶元素与最后一个元素交换
-            int temp = array[0];
-            array[0] = array[i];
-            array[i] = temp;
+            SortDemoUtils.swap(array, 0, i);
             // 这里--length意味着最后一个元素被取出不参与调整
             adjustMaxHeap(array, i, 0);
         }
@@ -89,9 +87,7 @@ public class HeapSortDemo {
             }
             // 如果当前父节点不是最大值则交换其于最大值,继续调整
             if (maxNumberIndex != currentParentIndex) {
-                int temp = array[maxNumberIndex];
-                array[maxNumberIndex] = array[currentParentIndex];
-                array[currentParentIndex] = temp;
+                SortDemoUtils.swap(array, maxNumberIndex, currentParentIndex);
                 adjustMaxHeap(array, length, maxNumberIndex);
             }
         }

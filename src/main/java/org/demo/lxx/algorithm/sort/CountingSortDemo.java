@@ -2,6 +2,8 @@ package org.demo.lxx.algorithm.sort;
 
 import java.util.Arrays;
 
+import javafx.util.Pair;
+
 /**
  * 计数排序示例
  * <p>
@@ -34,30 +36,24 @@ public class CountingSortDemo {
         if (length > 0) {
             // 获取到最大值和最小值
             // 通过流的方式在首次运行时会比较浪费时间，但初始化后可快速获取
-            //  int maxNumber = Arrays.stream(array).max().getAsInt();
-            //  int minNumber = Arrays.stream(array).min().getAsInt();
-            int maxNumber = array[0], minNumber = array[0];
-            for (int i = 1; i < length; i++) {
-                if (array[i] > maxNumber) {
-                    maxNumber = array[i];
-                }
-                if (array[i] < minNumber) {
-                    minNumber = array[i];
-                }
-            }
+            //  int maxValue = Arrays.stream(array).max().getAsInt();
+            //  int minValue = Arrays.stream(array).min().getAsInt();
+
+            Pair<Integer, Integer> maxAndMinValue = SortDemoUtils.getMaxAndMinValue(array, length);
+            final int maxValue = maxAndMinValue.getKey(), minValue = maxAndMinValue.getValue();
             // 定义额外的空间用来计数待排序数据中的元素,长度为元素的范围,
-            final int bucketLength = maxNumber - minNumber + 1;
+            final int bucketLength = maxValue - minValue + 1;
             final int[] bucket = new int[bucketLength];
             // 初始bucket每个元素计数都为0
             Arrays.fill(bucket, 0);
             for (int value : array) {
-                bucket[value - minNumber]++;
+                bucket[value - minValue]++;
             }
             int sortedIndex = 0;
             // 再将bucket中的下标按照元素（下标出现次数）反向填充到原数组中
             for (int i = 0; i < bucketLength; i++) {
                 while (bucket[i] > 0) {
-                    array[sortedIndex++] = i + minNumber;
+                    array[sortedIndex++] = i + minValue;
                     // 取出后计数相应减1
                     bucket[i]--;
                 }
