@@ -17,6 +17,24 @@ import lombok.extern.slf4j.Slf4j;
 public class SortDemoClient {
 
 
+    public static void testCountingSort(int[] originalArray) {
+
+        // log.debug("计数排序前输入参数为:" + Arrays.toString(originalArray));
+
+        final int[] array1 = Arrays.copyOf(originalArray, originalArray.length);
+        long beginTime = System.currentTimeMillis();
+        CountingSortDemo.countingSortByRange(array1);
+        log.info("通过范围计数排序排序耗时为:" + (System.currentTimeMillis() - beginTime) + "毫秒");
+        // log.debug("通过范围计数排序后输出结果为:" + Arrays.toString(array1));
+
+        final int[] array2 = Arrays.copyOf(originalArray, originalArray.length);
+        beginTime = System.currentTimeMillis();
+        CountingSortDemo.countingSortByMaxValue(array2);
+        log.info("通过最大值计数排序排序耗时为:" + (System.currentTimeMillis() - beginTime) + "毫秒");
+        // log.debug("通过最大值计数排序后输出结果为:" + Arrays.toString(array2));
+    }
+
+
     public static void testHeapSort(int[] originalArray) {
 
         log.debug("堆排序前输入参数为:" + Arrays.toString(originalArray));
@@ -150,10 +168,12 @@ public class SortDemoClient {
             // testSampleSelectSort(originalArray);
             // log.warn("-------------分隔符---------------");
             // testShellSort(originalArray);
-            log.warn("-------------分隔符---------------");
-            testMergeSort(originalArray);
-            log.warn("-------------分隔符---------------");
-            testHeapSort(originalArray);
+            // log.warn("-------------分隔符---------------");
+            // testMergeSort(originalArray);
+            // log.warn("-------------分隔符---------------");
+            // testHeapSort(originalArray);
+            // log.warn("-------------分隔符---------------");
+            testCountingSort(originalArray);
         }
     }
 }

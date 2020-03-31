@@ -1,6 +1,5 @@
 package org.demo.lxx.algorithm.sort;
 
-import java.util.Arrays;
 
 /**
  * 希尔排序简单实现

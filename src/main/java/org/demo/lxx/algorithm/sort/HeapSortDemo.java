@@ -42,8 +42,8 @@ public class HeapSortDemo {
             int temp = array[0];
             array[0] = array[i];
             array[i] = temp;
-            // 这里length--意味着最后一个元素被取出不参与调整
-            adjustMaxHeap(array, --length, 0);
+            // 这里--length意味着最后一个元素被取出不参与调整
+            adjustMaxHeap(array, i, 0);
         }
     }
 
@@ -67,19 +67,19 @@ public class HeapSortDemo {
     /**
      * 将堆调整成大根堆
      *
-     * @param array  待调整的堆
-     * @param length 堆元素数量
-     * @param i      当前堆父节点下标
+     * @param array              待调整的堆
+     * @param length             堆元素数量
+     * @param currentParentIndex 当前堆父节点下标
      */
-    private static void adjustMaxHeap(int[] array, int length, int i) {
+    private static void adjustMaxHeap(int[] array, int length, int currentParentIndex) {
 
-        if (i < length) {
+        if (currentParentIndex < length) {
             // 左子节点下标
-            final int leftChildIndex = 2 * i + 1;
+            final int leftChildIndex = 2 * currentParentIndex + 1;
             // 右子节点下标
-            final int rightChildIndex = 2 * i + 2;
+            final int rightChildIndex = 2 * currentParentIndex + 2;
             // 默认parent节点大于子节点
-            int maxNumberIndex = i;
+            int maxNumberIndex = currentParentIndex;
             // 找到真正的最大值下标
             if (leftChildIndex < length && array[leftChildIndex] > array[maxNumberIndex]) {
                 maxNumberIndex = leftChildIndex;
@@ -88,10 +88,10 @@ public class HeapSortDemo {
                 maxNumberIndex = rightChildIndex;
             }
             // 如果当前父节点不是最大值则交换其于最大值,继续调整
-            if (maxNumberIndex != i) {
+            if (maxNumberIndex != currentParentIndex) {
                 int temp = array[maxNumberIndex];
-                array[maxNumberIndex] = array[i];
-                array[i] = temp;
+                array[maxNumberIndex] = array[currentParentIndex];
+                array[currentParentIndex] = temp;
                 adjustMaxHeap(array, length, maxNumberIndex);
             }
         }
