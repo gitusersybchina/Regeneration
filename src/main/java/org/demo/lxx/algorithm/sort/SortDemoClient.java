@@ -16,16 +16,24 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class SortDemoClient {
 
+    public static void testRadixSort(int[] originalArray) {
+
+        log.debug("基数排序前输入参数为:" + Arrays.toString(originalArray));
+
+        final int[] array1 = Arrays.copyOf(originalArray, originalArray.length);
+        long beginTime = System.currentTimeMillis();
+        RadixSortDemo.radixSort(array1);
+        log.info("基数排序排序耗时为:" + (System.currentTimeMillis() - beginTime) + "毫秒");
+        log.debug("基数排序后输出结果为:" + Arrays.toString(array1));
+    }
+
 
     public static void testBucketSort(int[] originalArray) {
 
         log.debug("桶排序+直接插入排序前输入参数为:" + Arrays.toString(originalArray));
 
         final int[] array1 = Arrays.copyOf(originalArray, originalArray.length);
-        long beginTime = System.currentTimeMillis();
-        BucketSortDemo.bucketSort(array1, SortDemoUtils.DEFAULT_BUCKET_QUANTITY);
-        log.info("通过桶排序+直接插入排序排序耗时为:" + (System.currentTimeMillis() - beginTime) + "毫秒");
-        log.debug("通过桶排序+直接插入排序后输出结果为:" + Arrays.toString(array1));
+        BucketSortDemo.bucketSortAsc(array1, SortDemoUtils.DEFAULT_BUCKET_QUANTITY);
     }
 
 
@@ -186,9 +194,11 @@ public class SortDemoClient {
             // log.warn("-------------分隔符---------------");
             // testHeapSort(originalArray);
             // log.warn("-------------分隔符---------------");
-            testCountingSort(originalArray);
-            log.warn("-------------分隔符---------------");
+            // testCountingSort(originalArray);
+            // log.warn("-------------分隔符---------------");
             testBucketSort(originalArray);
+            // log.warn("-------------分隔符---------------");
+            testRadixSort(originalArray);
         }
     }
 }

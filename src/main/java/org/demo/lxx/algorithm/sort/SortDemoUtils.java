@@ -17,6 +17,8 @@ public class SortDemoUtils {
 
     public static final int DEFAULT_BUCKET_QUANTITY = 5;
 
+    public static final int DEFAULT_RADIX = 10;
+
 
     /**
      * 获取一个序列中的最小值和最大值
@@ -50,6 +52,22 @@ public class SortDemoUtils {
         int temp = array[m];
         array[m] = array[n];
         array[n] = temp;
+    }
+
+    /**
+     * 获取数据的位数
+     *
+     * @param number 数字
+     * @return 数据十进制位数
+     */
+    public static int getDigitsOfNumber(int number) {
+
+        int digit = 0;
+        while (number > 0) {
+            digit++;
+            number /= DEFAULT_RADIX;
+        }
+        return digit;
     }
 
 

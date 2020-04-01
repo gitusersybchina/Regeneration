@@ -1,8 +1,7 @@
 package org.demo.lxx.algorithm.sort;
 
-import java.util.Arrays;
-
 import javafx.util.Pair;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * 桶排序示例
@@ -18,6 +17,7 @@ import javafx.util.Pair;
  * @version : 1.0
  * @date : 2020/3/30 18:11
  */
+@Slf4j
 public class BucketSortDemo {
 
 
@@ -31,11 +31,11 @@ public class BucketSortDemo {
      * @param bucketQuantity 桶的数量
      * @param array          待排序数据
      */
-    public static void bucketSort(int[] array, int bucketQuantity) {
+    public static void bucketSortAsc(int[] array, int bucketQuantity) {
 
         final int length = array.length;
         if (array.length > 0) {
-
+            long beginTime = System.currentTimeMillis();
             Pair<Integer, Integer> maxAndMinValue = SortDemoUtils.getMaxAndMinValue(array, length);
             final int maxValue = maxAndMinValue.getKey(), minValue = maxAndMinValue.getValue();
             // 每个桶存放数据的范围
@@ -49,28 +49,76 @@ public class BucketSortDemo {
                 int k = (value - minValue) / range;
                 // 放进桶里
                 buckets[k][everyBucketCount[k]] = value;
-                // 同时给每个桶计数
+                // 同时给当前放入元素的桶计数
                 everyBucketCount[k]++;
             }
-
-            int i, j, arrayIndex = 0;
-            for (i = 0; i < bucketQuantity; i++) {
-                // 当前桶中实际元素数量
-                final int currentBucketCount = everyBucketCount[i];
-                if (currentBucketCount == 0) {
-                    continue;
-                }
-                // 遍历每个桶,对其中的非空桶进行插入排序
-                final int[] currentBucket = buckets[i];
-                InsertionSortDemo.straightlyInsertSort(currentBucket);
-                // 遍历当前桶中的元素,取出非空桶中的元素反向拼接到原待排序数组
-                for (j = 0; j < currentBucketCount; j++) {
-                    array[arrayIndex++] = currentBucket[currentBucket.length - currentBucketCount + j];
-                    System.out.println(Arrays.toString(array));
-                }
-            }
+            fillArrayAsc(array, buckets, everyBucketCount);
+            // log.debug("通过桶排序+直接插入升序排序后输出结果为{}", Arrays.toString(array));
+            log.info("通过桶排序+直接插入排序耗时为:" + (System.currentTimeMillis() - beginTime) + "毫秒");
+            log.warn("-------------分隔符---------------");
+            beginTime = System.currentTimeMillis();
+            fillArrayDesc(array, buckets, everyBucketCount);
+            // log.debug("通过桶排序+冒泡降序排序后输出结果为{}", Arrays.toString(array));
+            log.info("通过桶排序+冒泡降序排序耗时为:" + (System.currentTimeMillis() - beginTime) + "毫秒");
         }
 
+    }
+
+    /**
+     * 升序填充原数组
+     *
+     * @param array            待排序数组
+     * @param buckets          桶
+     * @param everyBucketCount 桶计数器
+     */
+    private static void fillArrayAsc(int[] array, int[][] buckets, int[] everyBucketCount) {
+
+        final int bucketQuantity = buckets.length;
+        int i, j, arrayIndex = 0;
+        for (i = 0; i < bucketQuantity; i++) {
+            // 当前桶中实际元素数量
+            final int currentBucketCount = everyBucketCount[i];
+            if (currentBucketCount == 0) {
+                continue;
+            }
+            // 遍历每个桶,对其中的非空桶进行插入排序
+            final int[] currentBucket = buckets[i];
+            InsertionSortDemo.straightlyInsertSort(currentBucket);
+            // 遍历当前桶中的元素,取出非空桶中的元素反向拼接到原待排序数组
+            for (j = 0; j < currentBucketCount; j++) {
+                array[arrayIndex++] = currentBucket[currentBucket.length - currentBucketCount + j];
+                // log.debug("回写第{}个桶排序后的结果为{}", i + 1 + ":[]", Arrays.toString(array));
+            }
+        }
+    }
+
+    /**
+     * 降序填充原数组
+     *
+     * @param array            待排序数组
+     * @param buckets          桶
+     * @param everyBucketCount 桶计数器
+     */
+    private static void fillArrayDesc(int[] array, int[][] buckets, int[] everyBucketCount) {
+
+        final int bucketQuantity = buckets.length;
+        int i, j, arrayIndex = 0;
+        for (i = bucketQuantity - 1; i >= 0; i--) {
+            // 当前桶中实际元素数量
+            final int currentBucketCount = everyBucketCount[i];
+            if (currentBucketCount == 0) {
+                continue;
+            }
+            // 遍历每个桶,对其中的非空桶进行插入排序
+            final int[] currentBucket = buckets[i];
+            // 这里使用了冒泡排序得到一个降序序列
+            BubbleSortDemo.bubbleSortOptimization(currentBucket);
+            // 遍历当前桶中的元素,取出非空桶中的元素反向拼接到原待排序数组
+            for (j = 0; j < currentBucketCount; j++) {
+                array[arrayIndex++] = currentBucket[j];
+                // log.debug("回写第{}个桶排序后的结果为{}", i + 1 + ":[]", Arrays.toString(array));
+            }
+        }
     }
 
 

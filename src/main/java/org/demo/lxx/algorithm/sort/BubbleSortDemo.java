@@ -38,7 +38,7 @@ public class BubbleSortDemo {
     }
 
     /**
-     * 优化上面的算法
+     * 优化上面的算法同时采用降序排列
      * 用一个 flag 参数记录新一轮的排序中元素是否做过交换，
      * 如果没有，说明前面参与比较过的元素已经是正序，那就没必要再从头比较了
      * 通过这个变量可以得到最优时间复杂度  O(n)
@@ -52,7 +52,7 @@ public class BubbleSortDemo {
             boolean flag = false;
             for (int j = 0; j < length - 1; j++) {
                 // 比较相邻元素交换
-                if (array[j] > array[j + 1]) {
+                if (array[j] < array[j + 1]) {
                     SortDemoUtils.swap(array, j, j + 1);
                     flag = true;
                 }
