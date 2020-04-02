@@ -1,4 +1,4 @@
-package org.demo.lxx.algorithm;
+package org.demo.lxx.algorithm.niuke;
 
 import java.util.ArrayList;
 import java.util.Scanner;

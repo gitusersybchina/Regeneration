@@ -1,4 +1,4 @@
-package org.demo.lxx.algorithm;
+package org.demo.lxx.algorithm.leetcode;
 
 import java.util.Arrays;
 
