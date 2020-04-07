@@ -53,13 +53,17 @@ public class BucketSortDemo {
                 everyBucketCount[k]++;
             }
             fillArrayAsc(array, buckets, everyBucketCount);
-            // log.debug("通过桶排序+直接插入升序排序后输出结果为{}", Arrays.toString(array));
-            log.info("通过桶排序+直接插入排序耗时为:" + (System.currentTimeMillis() - beginTime) + "毫秒");
+            if (log.isDebugEnabled()) {
+                log.debug("通过桶排序+直接插入升序排序后输出结果为[{}]", array);
+            }
+            log.info("通过桶排序+直接插入排序耗时为:[{}]毫秒", (System.currentTimeMillis() - beginTime));
             log.warn("-------------分隔符---------------");
             beginTime = System.currentTimeMillis();
             fillArrayDesc(array, buckets, everyBucketCount);
-            // log.debug("通过桶排序+冒泡降序排序后输出结果为{}", Arrays.toString(array));
-            log.info("通过桶排序+冒泡降序排序耗时为:" + (System.currentTimeMillis() - beginTime) + "毫秒");
+            if (log.isDebugEnabled()) {
+                log.debug("通过桶排序+冒泡降序排序后输出结果为[{}]", array);
+            }
+            log.info("通过桶排序+冒泡降序排序耗时为:[{}]毫秒", (System.currentTimeMillis() - beginTime));
         }
 
     }
@@ -87,7 +91,9 @@ public class BucketSortDemo {
             // 遍历当前桶中的元素,取出非空桶中的元素反向拼接到原待排序数组
             for (j = 0; j < currentBucketCount; j++) {
                 array[arrayIndex++] = currentBucket[currentBucket.length - currentBucketCount + j];
-                // log.debug("回写第{}个桶排序后的结果为{}", i + 1 + ":[]", Arrays.toString(array));
+                if (log.isDebugEnabled()) {
+                    log.debug("回写第[{}]个桶排序后的结果为[{}]", i + 1, array);
+                }
             }
         }
     }
@@ -116,7 +122,9 @@ public class BucketSortDemo {
             // 遍历当前桶中的元素,取出非空桶中的元素反向拼接到原待排序数组
             for (j = 0; j < currentBucketCount; j++) {
                 array[arrayIndex++] = currentBucket[j];
-                // log.debug("回写第{}个桶排序后的结果为{}", i + 1 + ":[]", Arrays.toString(array));
+                if (log.isDebugEnabled()) {
+                    log.debug("回写第[{}]个桶排序后的结果为[{}]", i + 1, array);
+                }
             }
         }
     }
