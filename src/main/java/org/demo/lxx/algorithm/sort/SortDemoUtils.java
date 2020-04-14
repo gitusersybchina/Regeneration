@@ -1,8 +1,8 @@
 package org.demo.lxx.algorithm.sort;
 
-import javafx.util.Pair;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import org.apache.commons.lang3.tuple.Pair;
 
 /**
  * 排序用到的一些通用方法
@@ -37,7 +37,7 @@ public class SortDemoUtils {
                 minValue = array[i];
             }
         }
-        return new Pair<>(maxValue, minValue);
+        return Pair.of(maxValue, minValue);
     }
 
     /**

@@ -1,6 +1,6 @@
 package org.demo.lxx.algorithm.sort;
 
-import javafx.util.Pair;
+import org.apache.commons.lang3.tuple.Pair;
 
 /**
  * 基数排序示例

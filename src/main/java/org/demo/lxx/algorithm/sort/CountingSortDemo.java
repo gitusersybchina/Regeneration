@@ -2,7 +2,8 @@ package org.demo.lxx.algorithm.sort;
 
 import java.util.Arrays;
 
-import javafx.util.Pair;
+import org.apache.commons.lang3.tuple.Pair;
+
 
 /**
  * 计数排序示例

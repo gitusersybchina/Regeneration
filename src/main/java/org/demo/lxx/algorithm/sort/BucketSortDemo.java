@@ -1,7 +1,7 @@
 package org.demo.lxx.algorithm.sort;
 
-import javafx.util.Pair;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.tuple.Pair;
 
 /**
  * 桶排序示例
