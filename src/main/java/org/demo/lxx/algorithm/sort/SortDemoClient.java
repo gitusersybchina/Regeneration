@@ -227,7 +227,7 @@ public class SortDemoClient {
             // log.warn("-------------分隔符---------------");
             // testStraightlyInsertSort(originalArray);
             // log.warn("-------------分隔符---------------");
-            // testBubbleSort(originalArray);
+            testBubbleSort(originalArray);
             // log.warn("-------------分隔符---------------");
             // testSampleSelectSort(originalArray);
             // log.warn("-------------分隔符---------------");
@@ -239,9 +239,27 @@ public class SortDemoClient {
             // log.warn("-------------分隔符---------------");
             // testCountingSort(originalArray);
             // log.warn("-------------分隔符---------------");
-            testBucketSort(originalArray);
-            // log.warn("-------------分隔符---------------");
-            testRadixSort(originalArray);
+            // testBucketSort(originalArray);
+            // // log.warn("-------------分隔符---------------");
+            // testRadixSort(originalArray);
+            testLxxBubbleSort(originalArray);
         }
     }
+
+
+    public static void testLxxBubbleSort(int[] originalArray) {
+
+        if (log.isDebugEnabled()) {
+            log.debug("刘茜茜的冒泡排序前输入参数为:[{}]", originalArray);
+        }
+
+        final int[] array1 = Arrays.copyOf(originalArray, originalArray.length);
+        long beginTime = System.currentTimeMillis();
+        BubbleSortDemo.lxxBubbleSort(array1);
+        log.info("刘茜茜的冒泡排序耗时为:[{}]毫秒", (System.currentTimeMillis() - beginTime));
+        if (log.isDebugEnabled()) {
+            log.debug("刘茜茜的冒泡排序后输出结果为:[{}]", array1);
+        }
+    }
+
 }

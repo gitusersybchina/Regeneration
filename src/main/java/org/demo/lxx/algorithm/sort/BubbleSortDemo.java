@@ -63,4 +63,29 @@ public class BubbleSortDemo {
         }
     }
 
+    /**
+     * 再次优化
+     *
+     * 冒泡排序是将最大（小）值移动到末端，因此每趟下来最后的元素不再参与比较
+     *
+     * @param array 待排序数据
+     */
+    public static void lxxBubbleSort(int[] array) {
+
+        final int length = array.length;
+        for (int i = 1; i < length; i++) {
+            boolean flag = false;
+            for (int j = 0; j < length - i; j++) {
+                if (array[j] > array[j + 1]) {
+                    SortDemoUtils.swap(array, j, j + 1);
+                    flag = true;
+                }
+            }
+            if (!flag) {
+                return;
+            }
+        }
+
+    }
+
 }
