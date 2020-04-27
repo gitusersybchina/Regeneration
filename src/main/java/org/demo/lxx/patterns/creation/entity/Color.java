@@ -1,8 +1,10 @@
 package org.demo.lxx.patterns.creation.entity;
 
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
- * Description for this class
+ * 抽象产品角色
  *
  * @author : yinbo.shi@hand-china.com
  * @version : 1.0
@@ -22,5 +24,29 @@ public interface Color {
         String RED = "RED";
         String GREEN = "GREEN";
         String BLUE = "BLUE";
+    }
+
+    @Slf4j
+    class Green implements Color {
+        @Override
+        public void fill() {
+            log.info("我要把你染成绿色的.");
+        }
+    }
+
+    @Slf4j
+    class Red implements Color {
+        @Override
+        public void fill() {
+            log.info("我要把你染成红色的.");
+        }
+    }
+
+    @Slf4j
+    class Blue implements Color {
+        @Override
+        public void fill() {
+            log.info("我要把你染成蓝色的.");
+        }
     }
 }

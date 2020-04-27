@@ -1,12 +1,11 @@
 package org.demo.lxx.patterns.creation.factory;
 
 import lombok.extern.slf4j.Slf4j;
-import org.demo.lxx.patterns.creation.entity.AirplaneProduct;
-import org.demo.lxx.patterns.creation.entity.CarProduct;
 import org.demo.lxx.patterns.creation.entity.Color;
-import org.demo.lxx.patterns.creation.entity.Product;
+import org.demo.lxx.patterns.creation.entity.AbstractProduct;
 import org.demo.lxx.patterns.creation.entity.Shape;
-import org.demo.lxx.patterns.creation.entity.TrainProduct;
+import org.demo.lxx.patterns.creation.entity.AbstractProduct.*;
+import org.demo.lxx.patterns.creation.factory.FactoryMethod.*;
 
 /**
  * 各类工厂模式客户端
@@ -22,12 +21,15 @@ public class FactoryClient {
 
         testSampleFactory();
         log.info("================简单工厂测试完成========================");
-        testFactoryMethod();
-        log.info("================工厂方法测试完成========================");
-        testAbstractFactory();
-        log.info("================抽象工厂测试完成========================");
+        // testFactoryMethod();
+        // log.info("================工厂方法测试完成========================");
+        // testAbstractFactory();
+        // log.info("================抽象工厂测试完成========================");
     }
 
+    /**
+     * 抽象工厂客户端
+     */
     public static void testAbstractFactory() {
 
         // 获取形状工厂
@@ -68,13 +70,13 @@ public class FactoryClient {
      */
     public static void testFactoryMethod() {
 
-        Product product1 = new FactoryOfCar().createProduct();
+        AbstractProduct product1 = new FactoryOfCar().createProduct();
         product1.productInformation();
 
-        Product product2 = new FactoryOfPlane().createProduct();
+        AbstractProduct product2 = new FactoryOfAirplane().createProduct();
         product2.productInformation();
 
-        Product product3 = new FactoryOfTrain().createProduct();
+        AbstractProduct product3 = new FactoryOfTrain().createProduct();
         product3.productInformation();
     }
 
@@ -83,15 +85,33 @@ public class FactoryClient {
      */
     public static void testSampleFactory() {
 
-        Product product1 = new SampleFactory().createProduct(new CarProduct());
-        Product product2 = new SampleFactory().createProduct(new TrainProduct());
-        Product product3 = new SampleFactory().createProduct(new AirplaneProduct());
-
+        AbstractProduct product1 = new SampleFactory().createProduct(new CarProduct());
         product1.productInformation();
+
+        AbstractProduct product2 = new SampleFactory().createProduct(new TrainProduct());
         product2.productInformation();
+
+        AbstractProduct product3 = new SampleFactory().createProduct(new AirplaneProduct());
         product3.productInformation();
 
-        Product product4 = new SampleFactory().createProduct(new Product());
+        AbstractProduct product4 = new SampleFactory().createProduct(new AbstractProduct() {
+            @Override
+            public void productInformation() {
+                super.productInformation();
+            }
+        });
         product4.productInformation();
+
+        AbstractProduct product5 = new SampleFactory().createProduct(CarProduct.class.getSimpleName());
+        product5.productInformation();
+
+        AbstractProduct product6 = new SampleFactory().createProduct(TrainProduct.class.getSimpleName());
+        product6.productInformation();
+
+        AbstractProduct product7 = new SampleFactory().createProduct(AirplaneProduct.class.getSimpleName());
+        product7.productInformation();
+
+        AbstractProduct product8 = new SampleFactory().createProduct("Abstract");
+        product8.productInformation();
     }
 }

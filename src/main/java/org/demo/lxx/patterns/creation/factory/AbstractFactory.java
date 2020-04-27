@@ -4,13 +4,13 @@ import org.demo.lxx.patterns.creation.entity.Color;
 import org.demo.lxx.patterns.creation.entity.Shape;
 
 /**
- * Description for this class
+ * 抽象工厂,生产相同等级产品
  *
  * @author : yinbo.shi@hand-china.com
  * @version : 1.0
  * @date : 2020/1/1 16:15
  */
-public abstract class AbstractFactory {
+public interface AbstractFactory {
 
     /**
      * 获取颜色
@@ -18,7 +18,7 @@ public abstract class AbstractFactory {
      * @param color 颜色名称
      * @return Color
      */
-    public abstract Color getColor(String color);
+    Color getColor(String color);
 
     /**
      * 获取图形
@@ -26,7 +26,7 @@ public abstract class AbstractFactory {
      * @param shape 图形名称
      * @return Shape
      */
-    public abstract Shape getShape(String shape);
+    Shape getShape(String shape);
 
     /**
      * 工厂类型
@@ -35,4 +35,6 @@ public abstract class AbstractFactory {
         String COLOR = "COLOR";
         String SHAPE = "SHAPE";
     }
+
+
 }

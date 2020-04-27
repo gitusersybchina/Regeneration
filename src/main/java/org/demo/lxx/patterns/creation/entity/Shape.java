@@ -1,8 +1,10 @@
 package org.demo.lxx.patterns.creation.entity;
 
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
- * Description for this class
+ * 抽象产品角色
  *
  * @author : yinbo.shi@hand-china.com
  * @version : 1.0
@@ -22,5 +24,29 @@ public interface Shape {
         String CIRCLE = "CIRCLE";
         String RECTANGLE = "RECTANGLE";
         String SQUARE = "SQUARE";
+    }
+
+    @Slf4j
+    class Circle implements Shape {
+        @Override
+        public void draw() {
+            log.info("来，左边跟我一起画个圆");
+        }
+    }
+
+    @Slf4j
+    class Rectangle implements Shape {
+        @Override
+        public void draw() {
+            log.info("来，中间跟我一起画个长方形");
+        }
+    }
+
+    @Slf4j
+    class Square implements Shape {
+        @Override
+        public void draw() {
+            log.info("来，右边跟我一起画个正方形");
+        }
     }
 }

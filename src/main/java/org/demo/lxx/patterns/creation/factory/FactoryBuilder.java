@@ -3,7 +3,7 @@ package org.demo.lxx.patterns.creation.factory;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * 工厂创造者
+ * 工厂创建引导类
  *
  * @author : yinbo.shi@hand-china.com
  * @version : 1.0
@@ -21,11 +21,11 @@ public class FactoryBuilder {
     public static AbstractFactory getFactory(String choice) {
         if (AbstractFactory.FactoryType.SHAPE.equalsIgnoreCase(choice)) {
             log.info("你的产品将由图形工厂来生产..............");
-            return new ShapeFactory();
+            return new ConcreteShapeFactory();
         }
         if (AbstractFactory.FactoryType.COLOR.equalsIgnoreCase(choice)) {
             log.info("你的产品将由颜料工厂来生产..............");
-            return new ColorFactory();
+            return new ConcreteColorFactory();
         }
         return null;
     }

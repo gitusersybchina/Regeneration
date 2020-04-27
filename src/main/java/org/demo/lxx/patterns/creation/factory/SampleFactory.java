@@ -1,13 +1,11 @@
 package org.demo.lxx.patterns.creation.factory;
 
 import lombok.extern.slf4j.Slf4j;
-import org.demo.lxx.patterns.creation.entity.AirplaneProduct;
-import org.demo.lxx.patterns.creation.entity.CarProduct;
-import org.demo.lxx.patterns.creation.entity.Product;
-import org.demo.lxx.patterns.creation.entity.TrainProduct;
+import org.demo.lxx.patterns.creation.entity.AbstractProduct;
+import org.demo.lxx.patterns.creation.entity.AbstractProduct.*;
 
 /**
- * 简单工厂模式
+ * 简单工厂
  *
  * @author : yinbo.shi@hand-china.com
  * @version : 1.0
@@ -16,27 +14,43 @@ import org.demo.lxx.patterns.creation.entity.TrainProduct;
 @Slf4j
 public class SampleFactory {
 
-    private static Product Product = new Product() {
+    private static AbstractProduct Product = new AbstractProduct() {
         @Override
         public void productInformation() {
             log.info("我是基础产品,没有信息");
         }
     };
 
-    public Product createProduct(Product product) {
+    public AbstractProduct createProduct(AbstractProduct product) {
 
-        if(product instanceof CarProduct){
+        if (product instanceof CarProduct) {
             return CarProduct.of("宝马");
         }
 
-        if(product instanceof AirplaneProduct){
+        if (product instanceof AirplaneProduct) {
             return AirplaneProduct.of("波音747");
         }
 
-        if(product instanceof TrainProduct){
+        if (product instanceof TrainProduct) {
             return TrainProduct.of("和谐号");
         }
         return Product;
     }
 
+
+    public AbstractProduct createProduct(String args) {
+
+        if (args.equalsIgnoreCase(CarProduct.class.getSimpleName())) {
+            return CarProduct.of("宝马");
+        }
+
+        if (args.equalsIgnoreCase(AirplaneProduct.class.getSimpleName())) {
+            return AirplaneProduct.of("波音747");
+        }
+
+        if (args.equalsIgnoreCase(TrainProduct.class.getSimpleName())) {
+            return TrainProduct.of("和谐号");
+        }
+        return Product;
+    }
 }

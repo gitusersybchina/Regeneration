@@ -1,22 +1,19 @@
 package org.demo.lxx.patterns.creation.factory;
 
 import lombok.extern.slf4j.Slf4j;
-import org.demo.lxx.patterns.creation.entity.Circle;
 import org.demo.lxx.patterns.creation.entity.Color;
-import org.demo.lxx.patterns.creation.entity.Rectangle;
 import org.demo.lxx.patterns.creation.entity.Shape;
-import org.demo.lxx.patterns.creation.entity.Square;
 import org.slf4j.Logger;
 
 /**
- * Description for this class
+ * 具体形状工厂-实现抽象工厂
  *
  * @author : yinbo.shi@hand-china.com
  * @version : 1.0
  * @date : 2020/1/1 16:19
  */
 @Slf4j
-public class ShapeFactory extends AbstractFactory {
+public class ConcreteShapeFactory implements AbstractFactory {
 
     @Override
     public Color getColor(String color) {
@@ -34,15 +31,15 @@ public class ShapeFactory extends AbstractFactory {
         }
         if(Shape.ShapeType.CIRCLE.equalsIgnoreCase(shapeType)){
             log.info("正在生产圆形.......");
-            return new Circle();
+            return new Shape.Circle();
         }
         if(Shape.ShapeType.RECTANGLE.equalsIgnoreCase(shapeType)){
             log.info("正在生产长方形.......");
-            return new Rectangle();
+            return new Shape.Rectangle();
         }
         if(Shape.ShapeType.SQUARE.equalsIgnoreCase(shapeType)){
             log.info("正在生产正方形.......");
-            return new Square();
+            return new Shape.Square();
         }
         return null;
     }
