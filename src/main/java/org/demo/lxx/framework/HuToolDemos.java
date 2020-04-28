@@ -8,7 +8,7 @@ import org.apache.commons.lang3.ThreadUtils;
 /**
  * Description for this class
  *
- * @author : xiaoshi
+ * @author : xiaoshiyb@163.com
  * @version : 1.0
  * @date : 2020/4/14 15:49
  */

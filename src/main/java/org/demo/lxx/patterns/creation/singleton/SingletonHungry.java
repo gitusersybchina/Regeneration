@@ -4,7 +4,7 @@ package org.demo.lxx.patterns.creation.singleton;
 /**
  * 单例模式-饿汉式
  *
- * @author : xiaoshi
+ * @author : xiaoshiyb@163.com
  * @version : 1.0
  * @date : 2019/10/28 17:52
  */

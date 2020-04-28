@@ -6,7 +6,7 @@ import org.demo.lxx.patterns.creation.entity.AbstractProduct.*;
 /**
  * 工厂方法中，是由子类工厂来创建产品
  *
- * @author : xiaoshi
+ * @author : xiaoshiyb@163.com
  * @version : 1.0
  * @date : 2019/11/14 10:49
  */

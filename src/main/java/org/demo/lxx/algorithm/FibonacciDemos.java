@@ -12,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
  * <p>
  * 在数学上，斐波那契数列以如下被以递推的方法定义：F(1)=1，F(2)=1, F(n)=F(n - 1)+F(n - 2)（n ≥ 3，n ∈ N*）
  *
- * @author : xiaoshi
+ * @author : xiaoshiyb@163.com
  * @version : 1.0
  * @date : 2020/4/2 16:07
  */

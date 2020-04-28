@@ -26,7 +26,7 @@ import java.util.Scanner;
  * 1 2
  * 3 4
  *
- * @author : xiaoshi
+ * @author : xiaoshiyb@163.com
  * @version : 1.0
  * @date : 2020/3/22 11:41
  */

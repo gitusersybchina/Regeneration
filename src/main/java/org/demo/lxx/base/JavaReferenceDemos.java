@@ -14,7 +14,7 @@ import java.lang.ref.WeakReference;
  * 虚引用: 虚引用与弱引用差不多，但是在被JVM回收前会放入{@link java.lang.ref.ReferenceQueue},
  * 其他引用都是被JVM回收后才放入引用队列，因此虚引用大多被使用在引用销毁之前的处理工作
  *
- * @author : xiaoshi
+ * @author : xiaoshiyb@163.com
  * @version : 1.0
  * @date : 2020/4/16 16:21
  * @see java.lang.ref.Reference

@@ -36,7 +36,7 @@ package org.demo.lxx.algorithm.niuke;
  * 输出
  * 2 2 3 3 5
  *
- * @author : xiaoshi
+ * @author : xiaoshiyb@163.com
  * @version : 1.0
  * @date : 2020/3/19 11:41
  */

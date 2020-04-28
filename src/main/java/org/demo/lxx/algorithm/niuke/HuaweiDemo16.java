@@ -18,7 +18,7 @@ import java.util.Scanner;
  * 输出
  * 2
  *
- * @author : xiaoshi
+ * @author : xiaoshiyb@163.com
  * @version : 1.0
  * @date : 2020/3/24 11:41
  */

@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 1.2 扩容造成数据丢失分析过程
  * 2.jdk1.8中HashMap
  *
- * @author : xiaoshi
+ * @author : xiaoshiyb@163.com
  * @version : 1.0
  * @date : 2020/4/17 9:19
  */

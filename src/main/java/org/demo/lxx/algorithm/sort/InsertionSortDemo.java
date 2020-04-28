@@ -10,7 +10,7 @@ package org.demo.lxx.algorithm.sort;
  * <p>
  * 平均时间复杂度为O(n2)  空间复杂度O(1) 具有稳定性
  *
- * @author : xiaoshi
+ * @author : xiaoshiyb@163.com
  * @version : 1.0
  * @date : 2020/3/26 17:56
  */

@@ -16,7 +16,7 @@ package org.demo.lxx.algorithm.sort;
  * 唯一的好处可能就是不占用额外的内存空间了吧。
  * 理论上讲，选择排序可能也是平时排序一般人想到的最多的排序方法。
  *
- * @author : xiaoshi
+ * @author : xiaoshiyb@163.com
  * @version : 1.0
  * @date : 2020/3/27 14:26
  */

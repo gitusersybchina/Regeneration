@@ -9,7 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * 测试各种排序类
  *
- * @author : xiaoshi
+ * @author : xiaoshiyb@163.com
  * @version : 1.0
  * @date : 2020/3/26 18:00
  */

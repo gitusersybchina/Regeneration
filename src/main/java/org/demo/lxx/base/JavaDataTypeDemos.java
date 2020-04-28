@@ -4,7 +4,7 @@ package org.demo.lxx.base;
 /**
  * Description for this class
  *
- * @author : xiaoshi
+ * @author : xiaoshiyb@163.com
  * @version : 1.0
  * @date : 2020/4/16 16:59
  */

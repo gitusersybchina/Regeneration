@@ -12,7 +12,7 @@ import java.util.Stack;
  * <p>
  * 平均时间复杂度 O(n*log2n) 空间复杂度 O(n*log2n) 具有不稳定性
  *
- * @author : xiaoshi
+ * @author : xiaoshiyb@163.com
  * @version : 1.0
  * @date : 2020/3/25 15:05
  */

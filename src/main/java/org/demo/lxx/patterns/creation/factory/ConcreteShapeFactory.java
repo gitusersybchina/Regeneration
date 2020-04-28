@@ -8,7 +8,7 @@ import org.slf4j.Logger;
 /**
  * 具体形状工厂-实现抽象工厂
  *
- * @author : xiaoshi
+ * @author : xiaoshiyb@163.com
  * @version : 1.0
  * @date : 2020/1/1 16:19
  */
