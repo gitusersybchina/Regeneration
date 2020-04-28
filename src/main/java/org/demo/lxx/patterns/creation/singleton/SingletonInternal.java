@@ -13,7 +13,10 @@ public class SingletonInternal {
     }
 
     /**
+     * 内部类（登记式）
      * 延迟初始化、线程安全
+     * 相对于DCL实现容易且能达到DCL一样的功效
+     * 适用于静态域的情况，双检锁方式可在实例域需要延迟初始化时使用
      */
     private static class SingletonInternalHolder {
         private static final SingletonInternal INSTANCE = new SingletonInternal();
