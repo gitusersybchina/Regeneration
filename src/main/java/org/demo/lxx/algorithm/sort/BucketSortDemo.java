@@ -13,7 +13,7 @@ import org.apache.commons.lang3.tuple.Pair;
  * <p>
  * 平均时间复杂度 O(n+k) 空间复杂度 O(n+k)  具有稳定性
  *
- * @author : yinbo.shi@hand-china.com
+ * @author : xiaoshi
  * @version : 1.0
  * @date : 2020/3/30 18:11
  */

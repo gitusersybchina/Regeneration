@@ -14,7 +14,7 @@ package org.demo.lxx.algorithm.sort;
  * <p>
  * 平均时间复杂度 O(n*logN)  空间复杂度O(1)
  *
- * @author : yinbo.shi@hand-china.com
+ * @author : xiaoshi
  * @version : 1.0
  * @date : 2020/3/27 15:05
  */

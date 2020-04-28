@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * 单例模式-枚举实现
  *
- * @author : yinbo.shi@hand-china.com
+ * @author : xiaoshi
  * @version : 1.0
  * @date : 2019/10/31 16:07
  */

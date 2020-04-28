@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * 工厂创建引导类
  *
- * @author : yinbo.shi@hand-china.com
+ * @author : xiaoshi
  * @version : 1.0
  * @date : 2020/1/1 16:31
  */

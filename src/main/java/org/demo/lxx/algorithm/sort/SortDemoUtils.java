@@ -7,7 +7,7 @@ import org.apache.commons.lang3.tuple.Pair;
 /**
  * 排序用到的一些通用方法
  *
- * @author : yinbo.shi@hand-china.com
+ * @author : xiaoshi
  * @version : 1.0
  * @date : 2020/3/31 14:35
  */

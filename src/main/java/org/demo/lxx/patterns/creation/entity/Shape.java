@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * 抽象产品角色
  *
- * @author : yinbo.shi@hand-china.com
+ * @author : xiaoshi
  * @version : 1.0
  * @date : 2020/1/1 15:46
  */

@@ -18,7 +18,7 @@ import java.util.Scanner;
  * 输出
  * 10
  *
- * @author : yinbo.shi@hand-china.com
+ * @author : xiaoshi
  * @version : 1.0
  * @date : 2020/3/19 11:41
  */

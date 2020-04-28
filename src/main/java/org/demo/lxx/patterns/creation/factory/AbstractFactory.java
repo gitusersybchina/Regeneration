@@ -6,7 +6,7 @@ import org.demo.lxx.patterns.creation.entity.Shape;
 /**
  * 抽象工厂,生产相同等级产品
  *
- * @author : yinbo.shi@hand-china.com
+ * @author : xiaoshi
  * @version : 1.0
  * @date : 2020/1/1 16:15
  */

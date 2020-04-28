@@ -11,7 +11,7 @@ import org.apache.commons.lang3.tuple.Pair;
  * 平均时间复杂度 O(n*k)  空间复杂度 O(n+k) 具有稳定性
  * 其性能比桶排序略差，每一次关键字的桶分配都需要O(n)的时间复杂度，而且分配之后得到新的关键字序列又需要O(n)的时间复杂度。
  *
- * @author : yinbo.shi@hand-china.com
+ * @author : xiaoshi
  * @version : 1.0
  * @date : 2020/4/1 10:53
  */

@@ -3,7 +3,7 @@ package org.demo.lxx.patterns.creation.singleton;
 /**
  * 单例模式-懒汉式
  *
- * @author : yinbo.shi@hand-china.com
+ * @author : xiaoshi
  * @version : 1.0
  * @date : 2019/10/28 17:52
  */

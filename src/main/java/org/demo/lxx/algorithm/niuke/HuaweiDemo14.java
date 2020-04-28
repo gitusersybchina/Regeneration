@@ -36,7 +36,7 @@ import java.util.Scanner;
  * 输出
  * boy a am I
  *
- * @author : yinbo.shi@hand-china.com
+ * @author : xiaoshi
  * @version : 1.0
  * @date : 2020/3/23 11:41
  */

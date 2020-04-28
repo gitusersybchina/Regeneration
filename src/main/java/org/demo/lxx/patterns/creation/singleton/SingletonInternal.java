@@ -3,7 +3,7 @@ package org.demo.lxx.patterns.creation.singleton;
 /**
  * 单例模式-内部类实现
  *
- * @author : yinbo.shi@hand-china.com
+ * @author : xiaoshi
  * @version : 1.0
  * @date : 2019/10/31 15:54
  */

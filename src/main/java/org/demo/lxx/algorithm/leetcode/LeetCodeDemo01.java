@@ -6,7 +6,7 @@ import java.util.Arrays;
 /**
  * Description for this class
  *
- * @author : yinbo.shi@hand-china.com
+ * @author : xiaoshi
  * @version : 1.0
  * @date : 2020/1/2 14:28
  */

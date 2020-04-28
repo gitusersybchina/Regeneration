@@ -37,7 +37,7 @@ import java.util.Scanner;
  * 输出
  * 2 2 3 3 5
  *
- * @author : yinbo.shi@hand-china.com
+ * @author : xiaoshi
  * @version : 1.0
  * @date : 2020/3/19 11:41
  */

@@ -7,7 +7,7 @@ import java.util.EmptyStackException;
 /**
  * 消除过期的对象引用
  *
- * @author : yinbo.shi@hand-china.com
+ * @author : xiaoshi
  * @version : 1.0
  * @date : 2020/3/25 10:27
  */

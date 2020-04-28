@@ -12,7 +12,7 @@ import java.util.Arrays;
  * <p>
  * 平均时间复杂度 O(n*log2n) 空间复杂度 O(n) 具有稳定性
  *
- * @author : yinbo.shi@hand-china.com
+ * @author : xiaoshi
  * @version : 1.0
  * @date : 2020/3/30 11:23
  */
