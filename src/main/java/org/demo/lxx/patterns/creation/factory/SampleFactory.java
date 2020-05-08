@@ -1,8 +1,8 @@
 package org.demo.lxx.patterns.creation.factory;
 
 import lombok.extern.slf4j.Slf4j;
-import org.demo.lxx.patterns.creation.entity.AbstractProduct;
-import org.demo.lxx.patterns.creation.entity.AbstractProduct.*;
+import org.demo.lxx.patterns.creation.product.AbstractProduct;
+import org.demo.lxx.patterns.creation.product.AbstractProduct.*;
 
 /**
  * 简单工厂

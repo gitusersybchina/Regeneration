@@ -1,7 +1,7 @@
 package org.demo.lxx.patterns.creation.factory;
 
-import org.demo.lxx.patterns.creation.entity.AbstractProduct;
-import org.demo.lxx.patterns.creation.entity.AbstractProduct.*;
+import org.demo.lxx.patterns.creation.product.AbstractProduct;
+import org.demo.lxx.patterns.creation.product.AbstractProduct.*;
 
 /**
  * 工厂方法中，是由子类工厂来创建产品

@@ -1,7 +1,7 @@
 package org.demo.lxx.patterns.creation.factory;
 
-import org.demo.lxx.patterns.creation.entity.Color;
-import org.demo.lxx.patterns.creation.entity.Shape;
+import org.demo.lxx.patterns.creation.product.Color;
+import org.demo.lxx.patterns.creation.product.Shape;
 
 /**
  * 抽象工厂,生产相同等级产品

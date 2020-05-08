@@ -1,9 +1,8 @@
-package org.demo.lxx.patterns.creation.entity;
+package org.demo.lxx.patterns.creation.product;
 
 
 import java.util.UUID;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -35,6 +34,7 @@ public abstract class AbstractProduct {
     }
 
     @Data
+    @NoArgsConstructor
     @EqualsAndHashCode(callSuper = true)
     public static class AirplaneProduct extends AbstractProduct {
 
@@ -60,6 +60,7 @@ public abstract class AbstractProduct {
 
     @Data
     @EqualsAndHashCode(callSuper = true)
+    @NoArgsConstructor
     public static class TrainProduct extends AbstractProduct {
 
         public TrainProduct(String name, String number, int price) {
@@ -83,8 +84,8 @@ public abstract class AbstractProduct {
     }
 
     @Data
+    @NoArgsConstructor
     @EqualsAndHashCode(callSuper = true)
-    @AllArgsConstructor
     public static class CarProduct extends AbstractProduct {
 
         public CarProduct(String name, String number, int price) {

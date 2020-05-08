@@ -1,4 +1,4 @@
-package org.demo.lxx.patterns.creation.entity;
+package org.demo.lxx.patterns.creation.product;
 
 
 import lombok.extern.slf4j.Slf4j;

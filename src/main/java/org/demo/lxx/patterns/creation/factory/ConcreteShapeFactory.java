@@ -1,8 +1,8 @@
 package org.demo.lxx.patterns.creation.factory;
 
 import lombok.extern.slf4j.Slf4j;
-import org.demo.lxx.patterns.creation.entity.Color;
-import org.demo.lxx.patterns.creation.entity.Shape;
+import org.demo.lxx.patterns.creation.product.Color;
+import org.demo.lxx.patterns.creation.product.Shape;
 import org.slf4j.Logger;
 
 /**
