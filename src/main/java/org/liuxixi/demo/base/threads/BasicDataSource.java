@@ -1,8 +1,4 @@
-package org.liuxixi.demo.threads;
-
-import lombok.Data;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.Configuration;
+package org.liuxixi.demo.base.threads;
 
 /**
  * Description for this class

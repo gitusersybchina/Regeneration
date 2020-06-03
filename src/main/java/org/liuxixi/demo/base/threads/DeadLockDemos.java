@@ -1,4 +1,4 @@
-package org.liuxixi.demo.threads;
+package org.liuxixi.demo.base.threads;
 
 import lombok.extern.slf4j.Slf4j;
 

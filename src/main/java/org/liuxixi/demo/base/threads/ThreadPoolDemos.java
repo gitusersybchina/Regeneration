@@ -1,4 +1,4 @@
-package org.liuxixi.demo.threads;
+package org.liuxixi.demo.base.threads;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -56,7 +56,7 @@ import org.apache.commons.lang3.concurrent.BasicThreadFactory;
  * @date : 2020/5/28 10:19
  *
  * <li>
- * @see java.util.concurrent.ExecutorService
+ * @see ExecutorService
  * </li>
  *
  * <li>
@@ -77,9 +77,9 @@ import org.apache.commons.lang3.concurrent.BasicThreadFactory;
  * 2）CachedThreadPool:
  *   允许的创建线程数量为Integer.MAX_VALUE，可能会创建大量的线程，从而导致OOM。
  * <li>
- * @see java.util.concurrent.ThreadPoolExecutor
+ * @see ThreadPoolExecutor
  * 提供了不同的构造函数来创建不同的线程池，可以是我们更清楚线程池如何创建
- * @see java.util.concurrent.ThreadPoolExecutor#ThreadPoolExecutor
+ * @see ThreadPoolExecutor#ThreadPoolExecutor
  * </li>
  * </p>
  */

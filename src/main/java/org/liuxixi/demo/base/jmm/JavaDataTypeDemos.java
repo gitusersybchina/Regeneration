@@ -1,4 +1,4 @@
-package org.liuxixi.demo.base;
+package org.liuxixi.demo.base.jmm;
 
 
 /**

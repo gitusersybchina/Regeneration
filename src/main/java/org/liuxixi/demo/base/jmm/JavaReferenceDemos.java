@@ -1,9 +1,10 @@
-package org.liuxixi.demo.base;
+package org.liuxixi.demo.base.jmm;
 
 import java.lang.ref.PhantomReference;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.SoftReference;
 import java.lang.ref.WeakReference;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Java的四种引用
